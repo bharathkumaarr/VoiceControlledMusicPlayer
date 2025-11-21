@@ -15,7 +15,7 @@ export default function PlayerBar() {
   const current = queue[index];
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[50%] bg-[#1b1b1b] text-[#737373] backdrop-blur-xl rounded-4xl p-3 flex items-center gap-4">
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[50%] bg-[#1b1b1b] text-[#737373] backdrop-blur-xl rounded-4xl p-3 flex items-center shadow-2xl shadow-black gap-4">
       <div className="flex items-center gap-3 ">
         <div className="w-14 h-14 rounded-full bg-[#737373] text-[#1b1b1b] flex items-center justify-center text-xl font-semibold">
           {current?.title?.charAt(0) ?? '♫'}

@@ -73,15 +73,17 @@ export default function MicControl() {
       <div className="flex items-center gap-4">
         <button
           onClick={toggle}
-          className={`w-36 h-36 cursor-pointer hover:scale-110 rounded-full flex items-center justify-center shadow-2xl transition-all ease-in-out duration-500 ${
+          className={`w-54 h-54 cursor-pointer hover:scale-110 rounded-full flex items-center justify-center shadow-2xl shadow-black transition-all ease-in-out duration-500 ${
             listening ? 'ring-8 ring-black/60' : ''
-          } bg-linear-to-tr from-black/60 to-white/10 `}
+          }  `}
         >
-          <div className="w-20 h-20 rounded-full bg-black/40 flex items-center justify-center text-white">🎤</div>
+          <div className="w-32 h-32 rounded-full bg-black/40 flex items-center justify-center text-white">
+            <img src="mic.png" alt="mock" className="w-12 h-12 rounded-xl object-cover shadow-lg" />
+          </div>
         </button>
 
         <div className="min-w-[220px]">
-          <div className="text-sm text-slate-300">{listening ? 'Listening…' : 'Tap to speak'}</div>
+          {/* <div className="text-sm text-slate-300">{listening ? 'Listening…' : 'Tap to speak'}</div> */}
           <div className="text-sm mt-1 text-white/90">
             {listening
               ? (interimTranscript || <span className="text-slate-400">Speak now...</span>)

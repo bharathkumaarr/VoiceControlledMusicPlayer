@@ -25,10 +25,10 @@ export default function TrackList() {
   if (!tracks.length) return <div className="p-4">No tracks found. Add some MP3s to backend/src/media/ and run seed.</div>;
 
   return (
-    <div className="space-y-3 p-4">
+    <div className="space-y-3 p-4 mt-4">
       {tracks.map(t => (
-        <div key={t._id} className="flex items-center justify-between text-[#1b1b1b] bg-[#737373] rounded-4xl p-3 ">
-          <div className="flex items-center gap-3">
+        <div key={t._id} className="flex  items-center justify-between text-[#1b1b1b] bg-[#737373] rounded-4xl p-3 shadow-2xl shadow-black">
+          <div className="flex items-center gap-3 ">
             <div className="w-12 h-12 rounded-3xl bg-[#1b1b1b] text-[#737373] flex items-center justify-center text-sm font-semibold">
               {t.title.charAt(0) || '♫'}
             </div>
@@ -40,7 +40,7 @@ export default function TrackList() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => player.playTrackById(t)}
-              className="px-3 py-2 bg-white/10 rounded-md rounded-r-4xl hover:bg-white/20 cursor-pointer font-extrabold"
+              className="px-3 py-2 bg-white/10 rounded-md rounded-r-4xl hover:bg-white/20 cursor-pointer font-extrabold hover:shadow-2xl hover:shadow-black hover:scale-105 transition-all ease-in-out duration-500"
             >
               Play
             </button>
