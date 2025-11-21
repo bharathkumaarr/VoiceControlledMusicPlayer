@@ -36,8 +36,16 @@ async function getTrack(req,res,next) {
 
 }
 
-function streamTrack(req,res,next) {
+async function streamTrack(req,res,next) {
     try{
+        const track = await Track.findById(req.params.id).lean();
+        if (!track) return res.status(404).json({error: "Track not found"})
+
+        const filePath = path.isAbsolute(track.filename)
+        ? track.filename
+        : path.join(process.cwd(), MEDIA_DIR, track.filename)
+
+        await streamAudio(req,res,filePath, track.mimeType || 'audio/mpeg');
 
     } catch (err) {
         next(err)
