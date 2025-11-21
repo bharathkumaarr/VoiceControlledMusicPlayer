@@ -1,15 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const trackController = require('../controllers/trackController')
 
-router.get('/', (req,res)=>{
-    res.json({
-        msg: 'tracks list placeholder'
-    })
-})
-router.get('/:id/stream', (req,res)=>{
-    res.status(501).json({
-        msg: 'not implemented'
-    })
-})
+router.get('/', trackController.listTracks)
+router.get('/stream', trackController.searchTrack)
+router.get('/:id', trackController.getTrack)
+router.get('/:id/stream', trackController.streamTrack)
+
+
 
 module.exports=router
