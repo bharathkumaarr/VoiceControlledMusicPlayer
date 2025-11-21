@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-async function streamAudio(req,res, filePath, memType = 'audio/mpeg') {
+async function streamAudio(req,res, filePath, mimeType = 'audio/mpeg') {
     try {
         const stat = await fs.promises.stat(filePath);
         const fileSize = await stat.size
