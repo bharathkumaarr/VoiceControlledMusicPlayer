@@ -14,6 +14,9 @@ const MEDIA_DIR = process.env.MEDIA_DIR || path.join(__dirname,'..','media')
 async function seed() {
   await connectDB(process.env.MONGO_URI || 'mongodb://localhost:27017/musicdb');
 
+  // await Track.deleteMany({}); 
+  // console.log('Cleared existing tracks.');
+
   const files = fs.readdirSync(MEDIA_DIR).filter(f => /\.(mp3|ogg|m4a|wav)$/i.test(f));
   console.log('Found media files:', files);
 
