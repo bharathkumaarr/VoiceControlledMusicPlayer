@@ -27,7 +27,7 @@ export default function PlayerBar() {
       </div>
 
       <div className="flex-1">
-        <div className="flex items-center gap-3 justify-center border p-1 rounded-2xl">
+        <div className="flex items-center gap-3 justify-center  border  p-1 rounded-2xl">
           <button onClick={playPrev} className="p-2 font-bold"> &lt; &lt;</button>
           {!isPlaying ? (
             <button onClick={play} className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center font-bold">▶</button>
