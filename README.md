@@ -20,7 +20,7 @@ A full stack application that allows users to control music playback using real-
 * Shuffle mode
 * Seek
 
-### 🗄️ Backend + DB
+### Backend + DB
 
 * Node.js + Express
 * MongoDB for metadata
@@ -41,7 +41,7 @@ A full stack application that allows users to control music playback using real-
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 project/
@@ -67,7 +67,7 @@ project/
 
 ---
 
-## 🔧 Backend Setup
+## Backend Setup
 
 ```bash
 cd backend
@@ -165,7 +165,7 @@ User → SpeechRecognition → IntentMapper → PlayerService → PlayerContext 
 
 ## Demo
 
-https://voicecontrolledmusicplayer.vercel.app/.
+https://voicecontrolledmusicplayer.vercel.app/
 
 ---
 
