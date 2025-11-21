@@ -3,7 +3,7 @@ const path = require('path')
 
 async function streamAudio(req,res, filePath, memType = 'audio/mpeg') {
     try {
-        const stat = await fs.promises.stat(filepath);
+        const stat = await fs.promises.stat(filePath);
         const fileSize = await stat.size
 
         const range = req.headers.range;
@@ -45,7 +45,7 @@ async function streamAudio(req,res, filePath, memType = 'audio/mpeg') {
 
             fs.createReadStream(filePath).pipe(res)
         }   
-    } catch {
+    } catch (err) {
         console.error('streamAudio error', err);
         res.status(404).json({error:'File not found'})
     }

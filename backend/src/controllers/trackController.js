@@ -47,7 +47,7 @@ async function streamTrack(req,res,next) {
 
         await streamAudio(req,res,filePath, track.mimeType || 'audio/mpeg');
 
-    } catch (err) {
+    } catch(err) {
         next(err)
 
     }
