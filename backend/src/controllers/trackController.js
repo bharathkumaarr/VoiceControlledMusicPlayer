@@ -11,7 +11,7 @@ async function listTracks(req,res,next) {
         const limit = Math.min(100, parseInt(req.query.limit || '50',10))
         const skip = (page-1)*limit
 
-        const [items,total] = await promise.all([
+        const [items,total] = await Promise.all([
             Track.find().sort({createdAt:-1}).skip(skip).limit(limit).lean(), Track.countDocuments()
         ])
         res.json({items, total, page, limit})
