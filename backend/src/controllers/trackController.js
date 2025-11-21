@@ -5,8 +5,16 @@ const {streamAudio} = require('../services/streamService')
 const MEDIA_DIR = process.env.MEDIA_DIR || path.join(__dirname, '..','media');
 
 
-function listTracks(req,res,next) { 
+async function listTracks(req,res,next) { 
     try{
+        const page = Math.max(1,parseInt(req.query.page || '1', 10))
+        const limit = Math.min(100, parseInt(req.query.limit || '50',10))
+        const skip = (page-1)*limit
+
+        const [items,total] = await promise.all([
+            Track.find().sort({createdAt:-1}).skip(skip).limit(limit).lean(), Track.countDocuments()
+        ])
+        res.json({items, total, page, limit})
 
     } catch (err) {
         next(err)
