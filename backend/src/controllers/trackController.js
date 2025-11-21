@@ -54,10 +54,18 @@ async function streamTrack(req,res,next) {
 
 }
 
-function searchTrack(req,res,next) {
+async function searchTrack(req,res,next) {
     try{
-        
+        const q= (req.query.q || '').trim()
+        if (!q) return res.json({items:[]});
 
+        const regex = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        const items = await Track.find({
+            $or: [{ title: regex }, { artist: regex }, { album: regex }]
+        }).limit(20).lean();
+
+        res.json({ items });
+        
     } catch (err) {
         next(err)
     }
