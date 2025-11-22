@@ -6,7 +6,7 @@ import MicControl from './components/MicControl';
 export default function App() {
   return (
     <div className="min-h-screen bg-[#1b1b1b] text-[#bababa] select-none ">
-      <header className="p-6 text-4xl font-bold flex justify-center text-shadow-lg text-shadow-black">Voice Controlled Music Player</header>
+      <header className="p-6 text-4xl font-bold flex justify-center text-shadow-lg text-shadow-black cursor-pointer"><a href="https://voice-controlled-music-player.vercel.app/">Voice Controlled Music Player</a></header>
 
       <main className="pt-2 pb-40">
         <section className="max-w-4xl mx-auto">
@@ -17,6 +17,7 @@ export default function App() {
               <MicControl />
             </div>
           </div>
+          <h6 className='text-xs text-red-400'>running this on a free instance, <a className='underline' href="https://voicecontrolledmusicplayer.onrender.com/api/health">click here</a> before you start using voice controlled music player</h6>
 
           <TrackList />
         </section>
