@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use('/api/tracks', require('./src/routes/tracks.routes'));
 app.get('/api/health', (req,res)=>{
-    res.json({ok: true})
+    res.json({server: 'live'})
 })
 
 const PORT = process.env.PORT || 3000
